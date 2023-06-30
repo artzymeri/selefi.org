@@ -23,7 +23,7 @@ const Articles = () => {
               </>
             );
           })}
-          <Link to='/home'>To Home</Link>
+          <Link to='/posting'>To Home</Link>
         </>
     )
 }

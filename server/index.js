@@ -16,11 +16,11 @@ const database = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'selefi_org_database'
+    database: 'selefi_database'
 })
 
 app.post('/post', (req, res)=> {
-    const sqlPost = 'INSERT INTO test_table (title, content) VALUES (?,?);'
+    const sqlPost = 'INSERT INTO articles_table (title, content) VALUES (?,?);'
     const title = req.body.title
     const content = req.body.content
 
@@ -30,7 +30,7 @@ app.post('/post', (req, res)=> {
 })
 
 app.get('/get', (req, res)=> {
-    const sqlGet = 'SELECT * FROM test_table;'
+    const sqlGet = 'SELECT * FROM articles_table;'
     database.query(sqlGet, (error, result)=> {
         res.send(result)
     })
