@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
@@ -9,11 +8,9 @@ import Axios from 'axios';
 function AppContent() {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
-    const [articles, setArticles] = useState([]);
   
     useEffect(() => {
       Axios.get('http://localhost:9000/get').then((response) => {
-        setArticles(response.data);
       });
     }, []);
   
