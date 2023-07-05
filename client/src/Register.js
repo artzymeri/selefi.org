@@ -4,17 +4,14 @@ import Axios from 'axios';
 
 function Register() {
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const submitFunction = () => {
-    Axios.post('http://localhost:9001/post', {
+    Axios.post('http://localhost:9001/register', {
       username: username,
-      email: email,
       password: password
     }).then(() => {
       setUsername('');
-      setEmail('');
       setPassword('');
     });
   };
@@ -31,15 +28,6 @@ function Register() {
           setUsername(e.target.value);
         }}
       />
-      <label>Email:</label>
-      <input
-        type="email"
-        name="email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
       <label>Password:</label>
       <input
         type="password"
@@ -50,7 +38,9 @@ function Register() {
         }}
       />
       <button onClick={submitFunction}>Submit</button>
-      <Link to="/articles">To Articles</Link>
+      <Link to="/articles">Articles</Link>
+      <br></br>
+      <Link to="/login">Login</Link>
     </>
   );
 }

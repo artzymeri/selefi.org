@@ -25,7 +25,7 @@ function AppContent() {
   
     return (
       <>
-        <h1>Article</h1>
+        <h1>Postings</h1>
         <label>Title:</label>
         <input
           type="text"

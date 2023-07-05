@@ -17,7 +17,7 @@ const Articles = () => {
         {articles.map((data) => {
             return (
               <>
-                <h1>title: {data.title}</h1>
+                <h1>Title: {data.title}</h1>
                 <p>content: {data.content}</p>
               </>
             );
